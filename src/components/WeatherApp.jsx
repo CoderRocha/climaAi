@@ -65,6 +65,15 @@ export default function WeatherApp() {
 
     const backgroundImage = data.weather ? backgroundImages[data.weather[0].main] : null;
 
+    const currentDate = new Date();
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const dayOfWeek = daysOfWeek[currentDate.getDay()];
+    const month = months[currentDate.getMonth()];
+    const dayOfMonth = currentDate.getDate();
+
+    const formattedDate = `${dayOfWeek}, ${month} ${dayOfMonth}`;
+
     return (
         <div className="container" style={{backgroundImage: backgroundImage}}>
             <div className="weather-app" style={{backgroundImage: backgroundImage ? backgroundImage.replace("to right", "to top") : null}}>
@@ -86,7 +95,7 @@ export default function WeatherApp() {
                     <div className="temp">{data.main ? `${Math.floor(data.main.temp)}º` : null}</div>
                 </div>
                 <div className="weather-date">
-                    <p>Fri, May 20</p>
+                    <p>{formattedDate}</p>
                 </div>
                 <div className="weather-data">
                     <div className="humidity">
