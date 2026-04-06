@@ -1,16 +1,88 @@
-# React + Vite
+## ClimaAI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O ClimaAI é um sistema web de previsão do tempo, onde o usuário pesquisa por uma cidade e visualiza as condições climáticas atuais em tempo real.
 
-Currently, two official plugins are available:
+## Índice
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Stack](#stack)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Instalação](#instalação)
+- [Executando o Projeto](#executando-o-projeto)
+- [Configurações](#configurações)
+- [Autor](#autor)
 
-## React Compiler
+## Sobre o Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O **ClimaAI** é um sistema web de previsão do tempo em tempo real. O sistema exibe automaticamente o clima de Los Angeles por padrão. O usuário pode pesquisar qualquer cidade pelo campo de busca, e visualizar temperatura, tipo de clima, umidade e velocidade do vento. O fundo da interface muda dinamicamente de acordo com o clima atual, junto com as imagens que ficam ao redor do card de clima.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Consulta de clima**
+  - Busca de clima por cidade.
+  - Exibição de temperatura (°C), tipo de clima, umidade (%) e velocidade do vento (km/h).
+
+- **User Interface**
+  - Imagem e gradiente de fundo dinâmicos por condição climática: `Clear`, `Clouds`, `Rain`, `Snow`, `Haze` e `Mist`.
+
+## Stack
+
+- **Frontend**
+  - **React**
+  - **Vite**
+
+## Estrutura do Projeto
+
+- **`src/`**
+  - **`App.jsx`**
+  - **`main.jsx`**
+  - **`index.css`**
+  - **`Components/WeatherApp.jsx`**
+  - **`Components/WeatherApp.css`**
+  - **`assets/images/`**
+
+## Instalação
+
+Pré-requisitos:
+
+- **Node.js**
+- API key da **OpenWeatherMap** ([openweathermap.org](https://openweathermap.org))
+
+1. **Instalar as dependências**
+
+   ```bash
+   npm install
+   ```
+
+2. **Criar o arquivo `.env` a partir do exemplo**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. **Configurar as variáveis de ambiente no `.env`**
+
+   - `VITE_WEATHER_API_KEY`
+   - `VITE_WEATHER_API_URL`
+
+## Executando o Projeto
+
+```bash
+npm run dev
+```
+
+Após rodar o comando, acesse a aplicação em `http://localhost:5173`.
+
+## Configurações
+
+As variáveis de ambiente estão em `.env.example`:
+
+## Autor
+
+**Guilherme Rocha (CoderRocha)**
+
+- GitHub: [CoderRocha](https://github.com/coderrocha)
+- LinkedIn: [Guilherme Rocha](https://www.linkedin.com/in/guilherme-rocha-da-silva)
+
+---
